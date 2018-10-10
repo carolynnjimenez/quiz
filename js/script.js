@@ -8,7 +8,6 @@
 
 
 // DOCUMENT READY FUNCTION BELOW
-
 $(document).ready(function() {
     $("button").click(function() {
         var name = $("#name").val();
@@ -17,7 +16,7 @@ $(document).ready(function() {
         var q2Result = $("#question2").val();
         var q3Result = $("#question3").val();
         var totalScore = calculateActivityScore(q1Result) + calculateDisappearScore(q2Result) + calculateAnimalScore(q3Result);
-        var housePlacement = placement(totalScore, name);
+        var housePlacement = placement(totalScore);
         console.log(housePlacement);
         console.log(totalScore);
         displayResult(housePlacement,name,imgSrc);
@@ -78,33 +77,29 @@ $(document).ready(function() {
         }
     }
     
-    function placement(totalScore,name) {
+    function placement(totalScore) {
         var housePlacement;
         var imgSrc;
         if (totalScore > 13) {
             housePlacement = "Ravenclaw";
-            imgSrc="#";
-            displayResult(housePlacement,name,imgSrc);
-        }
-        else if (totalScore >11 && totalScore <= 13) {
+            imgSrc="https://media.giphy.com/media/3hhzMAlvrWM0/giphy.gif";
+        } else if (totalScore >11 && totalScore <= 13) {
             housePlacement = "Gryffindor";
-            imgSrc="https://media.giphy.com/media/l41lX2yEwhnD6QrLi/giphy.gif";
-            displayResult(housePlacement,name,imgSrc);
+            imgSrc="https://media.giphy.com/media/ZEcqRHi6I7Ezu/giphy.gif";
         }
         else if (totalScore > 9 && totalScore <= 11) {
             housePlacement = "Hufflepuff";
-            imgSrc="https://media.giphy.com/media/zWyv9xtsEfXQQ/giphy.gif";
-            displayResult(housePlacement,name,imgSrc);
+            imgSrc="https://media.giphy.com/media/dWQK9d18BWbYc/giphy.gif";
         }
-        else if (totalScore >7  && totalScore <= 9) {
+        else if (totalScore > 7  && totalScore <= 9) {
             housePlacement = "Slytherin";
             imgSrc="https://media.giphy.com/media/RUvPszdoBXWIU/giphy.gif";
-            displayResult(housePlacement,name,imgSrc);
         }
 
         else{
             $(".result").html("<h2>Make sure to answer all of the questions, " + name + " We want to make sure we get this right!</h2>");
         }
+        return housePlacement;
+
     }
-    return housePlacement;
 });
