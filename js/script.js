@@ -16,7 +16,7 @@ $(document).ready(function() {
         var q2Result = $("#question2").val();
         var q3Result = $("#question3").val();
         var totalScore = calculateActivityScore(q1Result) + calculateDisappearScore(q2Result) + calculateAnimalScore(q3Result);
-        var housePlacement = placement(totalScore, name);
+        housePlacement = placement(totalScore, name);
         console.log("q1 " + q1Result);
         console.log("q2 " + q2Result);
         console.log("q3 " + q3Result);
@@ -49,7 +49,7 @@ $(document).ready(function() {
             }
     }
     function calculateDisappearScore(activity) {
-            if (activity === "Ignorance" || activity === "Ignorance") {
+            if (activity === "Ignorance" || activity === "ignorance") {
                 return 5;
             }
             else if (activity === "War" || activity === "war") {
@@ -67,14 +67,14 @@ $(document).ready(function() {
     }
     
     function calculateAnimalScore(animal) {
-        if (animal.length > 2) {
-            return 3;
+        if (animal.length > 6) {
+            return 5;
         }
-        else if (animal.length > 4 && animal.length <= 6) {
+        else if (animal.length > 2 && animal.length <= 4) {
             return 4;
         }
-        else if (animal.length > 6) {
-            return 5;
+        else if (animal.length < 2) {
+            return 3;
         }
         else {
             return 0;
@@ -89,7 +89,7 @@ $(document).ready(function() {
             housePlacement = "Ravenclaw";
             imgSrc="https://media.giphy.com/media/3hhzMAlvrWM0/giphy.gif";
 
-        } else if (totalScore >11 && totalScore <= 13) {
+        } else if (totalScore > 11 && totalScore <= 13) {
             housePlacement = "Gryffindor";
             imgSrc="https://media.giphy.com/media/ZEcqRHi6I7Ezu/giphy.gif";
         }
@@ -97,13 +97,11 @@ $(document).ready(function() {
             housePlacement = "Hufflepuff";
             imgSrc="https://media.giphy.com/media/dWQK9d18BWbYc/giphy.gif";
         }
-        else if (totalScore > 7  && totalScore <= 9) {
+        else if (totalScore < 7) {
             housePlacement = "Slytherin";
             imgSrc="https://thumbs.gfycat.com/AnotherEcstaticBuck-size_restricted.gif";
         }
-        else{
-            $(".result").html("<h2>Make sure to answer all of the questions, " + name + " We want to make sure we get this right!</h2>");
-        }
+        
         displayResult(housePlacement,name,imgSrc)
     }
 });
