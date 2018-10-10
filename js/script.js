@@ -17,6 +17,12 @@ $(document).ready(function() {
         var q3Result = $("#question3").val();
         var totalScore = calculateActivityScore(q1Result) + calculateDisappearScore(q2Result) + calculateAnimalScore(q3Result);
         var housePlacement = placement(totalScore);
+        console.log("q1 " + q1Result);
+        console.log("q2 " + q2Result);
+        console.log("q3 " + q3Result);
+        console.log(calculateActivityScore(q1Result));
+        console.log(calculateDisappearScore(q2Result));
+        console.log(calculateAnimalScore(q3Result));
         console.log(housePlacement);
         console.log(totalScore);
         displayResult(housePlacement,name,imgSrc);
