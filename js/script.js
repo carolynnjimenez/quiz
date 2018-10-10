@@ -23,7 +23,6 @@ $(document).ready(function() {
         console.log(calculateActivityScore(q1Result));
         console.log(calculateDisappearScore(q2Result));
         console.log(calculateAnimalScore(q3Result));
-        console.log(housePlacement);
         console.log(totalScore);
     });
     
@@ -87,11 +86,11 @@ $(document).ready(function() {
         var imgSrc;
         if (totalScore > 13) {
             housePlacement = "Ravenclaw";
-            imgSrc="https://media.giphy.com/media/3hhzMAlvrWM0/giphy.gif";
+            imgSrc="https://i1.wp.com/33.media.tumblr.com/4a2f7f773c3ff5aafa163f32da9e43d6/tumblr_n4vb0d9equ1rnp9obo1_500.gif";
 
         } else if (totalScore > 11 && totalScore <= 13) {
             housePlacement = "Gryffindor";
-            imgSrc="https://media.giphy.com/media/ZEcqRHi6I7Ezu/giphy.gif";
+            imgSrc="https://i.gifer.com/BEr.gif";
         }
         else if (totalScore > 9 && totalScore <= 11) {
             housePlacement = "Hufflepuff";
