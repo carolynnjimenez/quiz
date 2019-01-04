@@ -5,18 +5,11 @@ $(document).ready(function() {
         var name = $("#name").val();
         var finalAnswer = "TBD";
         var imgSrc = "https://media.giphy.com/media/22zgHX8aop488/giphy.gif";
-<<<<<<< HEAD
         var q1Result = $("#question1").val();
         var q2Result = $("#question2").val();
         var q3Result = $("#question3").val();
         var totalScore = questionOne(q1Result) + questionTwo(q2Result) + questionThree(q3Result);
         $(".result").text(answer(totalScore));
-=======
-        var q1Input = $("#question1").val();
-        var q2Input = $("#question2").val();
-        var q3Input = $("#question3").val();
-        var totalScore;
->>>>>>> 5ea226c6b7870ec5b757ba67e816c3f26871b5ef
     });
         
     function questionOne(q1Result){
